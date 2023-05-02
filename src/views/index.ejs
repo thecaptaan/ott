@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/css/splide.min.css"
+      integrity="sha512-KhFXpe+VJEu5HYbJyKQs9VvwGB+jQepqb4ZnlhUF/jQGxYJcjdxOTf6cr445hOc791FFLs18DKVpfrQnONOB1g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <section
+      class="splide"
+      aria-label="Splide Basic HTML Example"
+      id="CarouselContainer"
+    >
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide" id="CarouselList">
+            <div class="CarouselVideoPlayer">
+              <video
+                src="/tokyo.mp4"
+                poster="/tokyo.png"
+                autoplay
+                muted
+                loop
+                class="CarouselVideo"
+              ></video>
+              <div class="flex-row CarouselVideoInformation">
+                <div class="flex-column CarouselVideoInfItem">
+                  <span class="CarouselVideoLargeText">Tokyo Revenger</span>
+                  <p class="CarouselVideoParaText">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Veritatis blanditiis, neque minima rerum repudiandae,
+                    delectus quas explicabo temporibus perspiciatis laborum sunt
+                    rem laboriosam. Perferendis, atque? Ipsa voluptates rerum
+                    dolores eaque?
+                  </p>
+                  <div class="flex-row CarouselVideoPlayerBtn">
+                    <div>
+                      <button class="CarouselPlayBtn">Play Now</button>
+                    </div>
+                    <div>
+                      <button>play</button>
+                      <button>mute</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide" id="CarouselList">
+            <div class="CarouselVideoPlayer">
+              <video
+                src="/bleach.webm"
+                poster="/bleach.png"
+                autoplay
+                class="CarouselVideo"
+              ></video>
+
+              <div class="flex-row CarouselVideoInformation">
+                <div class="flex-column CarouselVideoInfItem">
+                  <span class="CarouselVideoLargeText">Bleach:Thousand Year Blood War</span>
+                  <p class="CarouselVideoParaText">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Veritatis blanditiis, neque minima rerum repudiandae,
+                    delectus quas explicabo temporibus perspiciatis laborum sunt
+                    rem laboriosam. Perferendis, atque? Ipsa voluptates rerum
+                    dolores eaque?
+                  </p>
+                  <div class="flex-row CarouselVideoPlayerBtn">
+                    <div>
+                      <button class="CarouselPlayBtn">Play Now</button>
+                    </div>
+                    <div>
+                      <button>play</button>
+                      <button>mute</button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide" id="CarouselList">
+            <div class="CarouselVideoPlayer">
+              <video
+                src="/naruto.mp4"
+                poster="/naruto.png"
+                autoplay
+                class="CarouselVideo"
+              ></video>
+              <div class="flex-row CarouselVideoInformation">
+                <div class="flex-column CarouselVideoInfItem">
+                  <span class="CarouselVideoLargeText">Naruto Shippuden</span>
+                  <p class="CarouselVideoParaText">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Veritatis blanditiis, neque minima rerum repudiandae,
+                    delectus quas explicabo temporibus perspiciatis laborum sunt
+                    rem laboriosam. Perferendis, atque? Ipsa voluptates rerum
+                    dolores eaque?
+                  </p>
+                  <div class="flex-row CarouselVideoPlayerBtn">
+                    <div>
+                      <button class="CarouselPlayBtn">Play Now</button>
+                    </div>
+                    <div>
+                      <button>play</button>
+                      <button>mute</button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/js/splide.min.js"
+  integrity="sha512-4TcjHXQMLM7Y6eqfiasrsnRCc8D/unDeY1UGKGgfwyLUCTsHYMxF7/UHayjItKQKIoP6TTQ6AMamb9w2GMAvNg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var splide = new Splide(".splide", {
+      type: "loop",
+      padding: "5rem",
+    });
+    splide.mount();
+  });
+</script>

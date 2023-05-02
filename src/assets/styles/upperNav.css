@@ -1,0 +1,46 @@
+.upperNav {
+    width: 100%;
+    height: 80px;
+    color: #ffffff;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+    background-color: #1B1212;
+}
+
+.upperNavLink {
+    color: #ffff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.BoxPlayer {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: calc(100vh - 80px);
+    background-color: aquamarine;
+}
+
+.BoxPlayerVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.BoxPlayerControls {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.6px);
+    -webkit-backdrop-filter: blur(1.6px);
+}
+
+.BoxPlayerPausePlay {
+    width: 100%;
+    height: 90%;
+}
