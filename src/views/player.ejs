@@ -10,34 +10,158 @@
   <body>
     <div class="upperNav flex-row">
       <div>
-        <a href="/" class="upperNavLink">Captaan</a>
+        <a href="/" class="upperNavLink logo">Captaan</a>
+      </div>
+      <div class="searchBar">
+        <form action="/video/search" method="">
+          <input type="text" name="title" class="input" placeholder="Search ..." required>
+        </form>
       </div>
       <div>
-        <a href=""></a>
+        <a href="/" class="upperNavLink">Home</a>
+        <a href="/about" class="upperNavLink">About</a>
       </div>
     </div>
+    <% if( data == true) { %>
     <div class="BoxPlayer" id="BoxPlayer">
-        <video src="/naruto.mp4"  poster="/naruto.png" class="BoxPlayerVideo" id="BoxVideo">
-
-        </video>
-        <div class="BoxPlayerControls">
-            <div class="BoxPlayerPausePlay flex-center" id="togglePlayPauseCont">
-                <img src="/play.svg" id="togglePlayPause" width="100" height="100" alt="">
-            </div>
-            <div class="flex-column">
-                <div>
-                    <input type="range" name="" id="">
-                </div>
-                <div class="flex-row">
-                    <div></div>
-                    <div>
-                        <img src="/fullscreen.svg" width="20" id="toggleFullScreen" height="20" alt="">
-                    </div>
-                </div>
-            </div>
+      <video
+        src="/<%=videoID%>.mp4"
+        class="BoxPlayerVideo"
+        id="BoxVideo"
+      ></video>
+      <div class="BoxPlayerControls">
+        <div class="BoxPlayerPausePlay flex-center" id="togglePlayPauseCont">
+          <img
+            src="/play.svg"
+            id="togglePlayPause"
+            width="100"
+            height="100"
+            alt=""
+          />
         </div>
+        <div class="flex-column">
+          <div class="flex-row">
+            <div></div>
+            <div>
+              <img
+                src="/fullscreen.svg"
+                width="20"
+                id="toggleFullScreen"
+                height="20"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <% } %> 
+    <% if( data == false) { %>
+      <div class="flex-center videoError" >
+        <h1><%= videoID %> video is not available</h1>
+      </div>
+    <% } %>
 
+    <div class="signupModalContainer" id="signupModal">
+      <div class="signupModalContent">
+        <h1>Create A Account First Please!</h1>
+        <form action="/new/account" method="post">
+          <div class="inputController">
+            <input
+              type="text"
+              class="input"
+              name="fullName"
+              placeholder="eg: The Captaan"
+              required
+            />
+          </div>
+          <div class="inputController">
+            <input
+              type="email"
+              class="input"
+              name="email"
+              placeholder="eg: example@example.com"
+              required
+            />
+          </div>
+          <div class="inputController">
+            <input
+              type="password"
+              class="input"
+              name="password"
+              placeholder="eg: Create a new password"
+              required
+            />
+          </div>
+          <button class="btn">Create a new account</button>
+        </form>
+      </div>
+    </div>
+    <style>
+      .signupModalContainer {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      .signupModalContent {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .input {
+        width: 100%;
+        padding: 6px 12px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        margin: 5px 0;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        appearance: none;
+        border-radius: 4px;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+      .input:focus {
+        color: #212529;
+        background-color: #fff;
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+      }
+      .btn {
+        width: 100%;
+        margin: 5px 0;
+        padding: 6px 12px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        border: none;
+        color: #ffffff;
+        background-color: #008000;
+      }
+      .videoError{
+        width: 100%;
+        height: calc(100vh - 80px);
+      }
+    </style>
   </body>
   <script src="/player.js"></script>
+  <script src="/signup.js"></script>
 </html>

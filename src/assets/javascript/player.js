@@ -14,22 +14,22 @@ BoxVideo.addEventListener("ended", () => {
 // Handle play and pause
 togglePlayPauseCont.addEventListener("click", togglePlay);
 
-window.addEventListener("keypress", (e) => {
-  if (e.key == " " || e.code == "Space" || e.code == 0) {
-    e.preventDefault()
-    return false;
-  }
-});
+// window.addEventListener("keypress", (e) => {
+//   if (e.key == " " || e.code == "Space" || e.code == 0) {
+//     e.preventDefault()
+//     return false;
+//   }
+// });
 
 // Toggle Fullscreen on click
 toggleFullScreen.addEventListener("click", toggleFullScreenPlayer);
 
 // Toggle Fullscreen whenever 'F'  || 'f' clicked
-window.addEventListener("keypress", (e) => {
-  if (e.key == "f" || "F") {
-    toggleFullScreenPlayer();
-  }
-});
+// window.addEventListener("keypress", (e) => {
+//   if (e.key == "f" || "F") {
+//     toggleFullScreenPlayer();
+//   }
+// });
 function toggleFullScreenPlayer() {
   if (!window.screenTop && !window.screenY) {
     document.exitFullscreen();

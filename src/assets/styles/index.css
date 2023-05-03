@@ -69,3 +69,15 @@
     backdrop-filter: blur(9.8px);
     -webkit-backdrop-filter: blur(9.8px);
 }
+.playBtn,
+.muteBtn{
+    padding: 6px 30px;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.77);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.8px);
+    -webkit-backdrop-filter: blur(9.8px);
+}

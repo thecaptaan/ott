@@ -11,9 +11,18 @@
 .upperNavLink {
     color: #ffff;
     font-size: 18px;
+    padding: 0 10px;
     text-decoration: none;
 }
+.logo{
+    font-size: 30px;
+    font-weight: 900;
+}
 
+.searchBar{
+    padding: 0 100px;
+    flex: 1;
+}
 .BoxPlayer {
     width: 100%;
     overflow: hidden;

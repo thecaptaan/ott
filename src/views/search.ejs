@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/upperNav.css" />
+  </head>
+  <body>
+    <div class="upperNav flex-row">
+      <div>
+        <a href="/" class="upperNavLink logo">Captaan</a>
+      </div>
+      <div class="searchBar">
+        <form action="/video/search" method="">
+          <input
+            type="text"
+            name="title"
+            class="input"
+            placeholder="Search ..."
+            required
+          />
+        </form>
+      </div>
+      <div>
+        <a href="/" class="upperNavLink">Home</a>
+        <a href="/about" class="upperNavLink">About</a>
+      </div>
+    </div>
+    <div class="searchContainer flex-column flex-center">
+      <% if( data.length <= 0) { %>
+        <div class="searchError flex-center">
+          <h1>Sorry we couldn't find it.</h1>
+        </div>
+      <% } %>
+      <% if( data.length > 0 ){ %>
+        <% for(let i = 0; i < data.length; i++){ %>
+          <a href="<%=data[i].video%>" class="searchCard flex-row">
+            <div>
+              <video class="searchVideo" src="/<%=data[i].video%>.mp4"></video>
+            </div>
+            <div class="searchDetails flex-column">
+              <h1><%=data[i].title%></h1>
+              <p>
+                <%=data[i].description%>
+              </p>
+            </div>
+        <%} %>
+        
+      <%} %>
+      
+      </a>
+    </div>
+
+    <style>
+        body{
+            background-color: black;
+        }
+      .searchContainer {
+        width: 100%;
+      }
+      .searchCard {
+        width: 90%;
+        margin: 10px 0;
+        display: flex;
+        color: black;
+        border-radius: 10px;
+        text-decoration: none;
+        justify-content: space-between;
+        background-color: gainsboro;
+        padding: 10px 20px;
+      }
+      .searchVideo {
+        width: 250px;
+        height: 200px;
+        object-fit: cover;
+      }
+      .searchDetails {
+        flex: 0.8;
+        overflow: hidden;
+      }
+      .searchError{
+        color: #fff;
+        height: calc(100vh - 80px);
+      }
+    </style>
+  </body>
+</html>
