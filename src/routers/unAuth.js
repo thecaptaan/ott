@@ -9,5 +9,10 @@ unAuth.get('/admin/uploader', (req, res, next)=>{
         title: "Admin Panel || Video Player"
     })
 })
+unAuth.get('/about', (req, res, next)=>{
+    res.render('about',{
+        title: "About || Video Player"
+    })
+})
 
 module.exports = unAuth;
